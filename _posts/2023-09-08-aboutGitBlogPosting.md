@@ -1,8 +1,7 @@
 ---
 layout: post
-title: "깃 블로그 포스팅 방법"
-image: "8.jpg"
-categories: Etc
+title: "[Jekyll] 깃 블로그 포스팅 방법"
+categories: Jekyll
 tags: [Blog, Git, Posting]
 
 toc: true
@@ -11,10 +10,9 @@ toc_sticky : true
 date: 2023-09-08
 last_modified_at: 2023-09-08
 ---
-# 깃 블로그 포스팅 방법
 
 
-깃 포스팅 테스트도 할 겸... 포스팅 하는 방법을 써본다.  
+포스팅 테스트도 할 겸... 포스팅 하는 방법을 써본다.  
 사용중인 테마는 [flexton](http://jekyllthemes.org/themes/flexton/) 이다.
 
 
@@ -30,8 +28,7 @@ ___
 ---
 layout: post
 title: "깃 블로그 포스팅 방법"
-image: "8.jpg"
-categories: Etc
+categories: Jekyll
 tags: [Blog, Git, Posting]
 
 toc: true
@@ -47,7 +44,6 @@ toc(Table of Contents)은 목차 표시 기능이다.
 toc_sticky를 true로 하면, 목차가 스크롤을 따라 움직인다.  
 toc_icon, toc_label 설정까지 하면 커스터마이징도 가능한듯 (다음에 해봐야겠다)
 
-##
 
 
 
