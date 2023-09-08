@@ -1,3 +1,8 @@
+<h1>블로그 주소</h1>
+https://kyuyoung11.github.io/
+<br><br><br>
+아래부터는 Flexton readme 내용
+<hr>
 <h1>Flexton is an ultra-minimalist and responsive theme for Jekyll</h1>
 
 <p>Flexton created especially for those who appreciate minimalism and functionality.</p>
