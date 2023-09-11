@@ -1,7 +1,7 @@
 title: Welcome to Flexton
 description: Flexton is a responsive and ultra-minimal theme for Jekyll.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "flexton.netlify.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://localhost:4000" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Author
 author-name:    규영
