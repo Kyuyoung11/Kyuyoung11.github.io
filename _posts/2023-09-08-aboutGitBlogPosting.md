@@ -35,7 +35,7 @@ toc: true
 toc_sticky : true
 
 date: 2023-09-08
-last_modified_at: 2023-09-08
+last_modified_at: 2023-09-12
 ---
 ````
 toc(Table of Contents)은 목차 표시 기능이다.  
@@ -48,6 +48,6 @@ toc_icon, toc_label 설정까지 하면 커스터마이징도 가능한듯 (다�
 
 ---
 ## 참고 사이트
-[Github 블로그] 블로그 포스팅하는 방법 - https://ansohxxn.github.io/blog/posting/  
-마크다운 사용법 with velog - https://velog.io/@wkdgus7113/Markdown-사용법  
-TOC 사용 방법 - https://devinlife.com/howto%20github%20pages/toc-table/
+[Github 블로그] 블로그 포스팅하는 방법 - [https://ansohxxn.github.io/blog/posting/](https://ansohxxn.github.io/blog/posting/)  
+마크다운 사용법 with velog - [https://velog.io/@wkdgus7113/Markdown-사용법](https://velog.io/@wkdgus7113/Markdown-사용법)   
+TOC 사용 방법 - [https://devinlife.com/howto%20github%20pages/toc-table/](https://devinlife.com/howto%20github%20pages/toc-table/)
