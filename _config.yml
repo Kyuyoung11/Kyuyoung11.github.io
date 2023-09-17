@@ -1,14 +1,14 @@
-title: Welcome to Flexton
+title: 규
 description: Flexton is a responsive and ultra-minimal theme for Jekyll.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://localhost:4000" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Author
-author-name:    규영
-author-image:   1.jpg
+author-name:    규
+author-image:   profile.png
 author-job:     Developer
 author-email:   pocky1111@naver.com # Add your email for contant form.
-author-twitter: artemsheludko_ # Add your twitter account
+#author-twitter: artemsheludko_ # Add your twitter account
 about-author:   반도태
 
 # Social settings

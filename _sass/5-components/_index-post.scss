@@ -11,16 +11,16 @@
 .c-post {
   width: 100%;
   max-width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  min-height: 180px;
+  min-height: 20px;
   border-radius: 10px;
   overflow: hidden;
   transition: $global-transition;
-  background-color: $white-color;
-  box-shadow: 0 1px 1px 0 rgba(31, 35, 46, .15);
+  background-color: $box_background;
+  //box-shadow: 0 1px 1px 0 rgba(31, 35, 46, .15);
   &:hover {
     transform: translate(0px, -2px);
     box-shadow: 0 15px 45px -10px rgba(10, 16, 34, .2)
@@ -29,27 +29,29 @@
     display: block;
     width: 30%;
     max-width: 100%;
-    min-height: 180px;
+    min-height: 20px;
     border-radius: 10px 0 0 10px;
     background-color: rgba(220,235,245,0.2);
     background-size: cover;
     background-position: 50% 50%;
   }
   .c-post-content {
-    padding: 15px;
+    padding: 12px;
     width: 70%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     .c-post-title {
-      font-size: 30px;
-      font-weight: 400;
-      margin: 0 0 15px;
+      font-size: 16px;
+      font-weight: 500;
+      margin: 0 0 0;
       a {
         text-decoration: none;
         color: $blue-dark;
       }
     }
-    .c-post-date,
-    .c-post-words {
-      font-size: 12px;
+    .c-post-date {
+      font-size:12px;
     }
   }
 }
@@ -80,7 +82,7 @@
     .c-post-content {
       width: 100%;
       .c-post-title {
-        font-size: 21px;
+        font-size: 23px;
         margin: 15px 0;
       }
     }

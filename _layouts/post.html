@@ -40,9 +40,8 @@ layout: home
           <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" title="Share on Google+" rel="nofollow" target="_blank"><div data-icon='ei-sc-google-plus' data-size='s'></div></a>
         </div>
       </div>
-      {% include newsletter.html %}
       <div class="c-recent-post">
-        <h4 class="c-recent__title">You might also enjoy</h4>
+        <h4 class="c-recent__title">다른 글</h4>
         <div class="c-recent__box">
         {% for post in site.related_posts limit:4 %}
         {% if post.image %}
@@ -59,7 +58,8 @@ layout: home
         {% endif %}
         {% endfor %}
         </div>
-      </div> <!-- /.c-recent-post -->
+      </div>
+      <!-- /.c-recent-post -->
 <!--      {% if site.disqus-identifier %}-->
 <!--        {% include disqus-comments.html %}-->
 <!--      {% endif %}-->
