@@ -30,7 +30,7 @@ home.html
 _config.yml
 
 # Author
-author-name:    규영
+author-name:    이름
 author-image:   1.jpg   
 author-job:     Developer
 author-email:   your-email@domain.com # Add your email for contant form.

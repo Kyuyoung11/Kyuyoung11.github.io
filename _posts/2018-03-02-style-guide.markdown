@@ -64,7 +64,7 @@ A paragraph looks like this — dolor amet cray stumptown fingerstache neutra fo
 
 #### Syntax Highlighter
 
-{% highlight js %}
+````
   $('.top').click(function () {
     $('html, body').stop().animate({ scrollTop: 0 }, 'slow', 'swing');
   });
@@ -75,7 +75,7 @@ A paragraph looks like this — dolor amet cray stumptown fingerstache neutra fo
       $('.top').removeClass("top-active");
     };
   });
-{% endhighlight %}
+````
 
 ***
 
