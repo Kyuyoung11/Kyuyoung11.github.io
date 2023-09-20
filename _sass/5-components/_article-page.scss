@@ -10,6 +10,45 @@
 .c-wrap-content {
   padding: 20px;
   background-color: $white-color;
+  table {
+    display: block;
+    margin-bottom: 1em;
+    width: 100%;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    border-collapse: collapse;
+    overflow-x: auto;
+
+    & + table {
+      margin-top: 1em;
+    }
+  }
+
+  thead {
+    background-color: $sub-background;
+    border-bottom: 2px solid mix(#000, $border-color-post, 25%);
+  }
+
+  th {
+    padding: 0.5em;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  td {
+    padding: 0.5em;
+    border-bottom: 1px solid mix(#000, $border-color-post, 25%);
+  }
+
+  tr,
+  td,
+  th {
+    vertical-align: middle;
+  }
+
+  img {
+    border : 1px solid $gray-lighter;
+  }
 }
 
 .c-article__image {
