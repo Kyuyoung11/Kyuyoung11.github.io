@@ -64,5 +64,5 @@ $ bundle exec jekyll serve
 
 ---
 ## 참고 사이트  
-[Github 블로그] github blog local에서 실행하기 (Windows) - [https://myung-ho.tistory.com/89](https://myung-ho.tistory.com/89)
+[Github 블로그] github blog local에서 실행하기 (Windows) - [https://myung-ho.tistory.com/89](https://myung-ho.tistory.com/89)  
 jekyll 테마 적용시킨 Github 블로그 로컬에서 변경사항 확인하기 - [https://dana3711.tistory.com/67](https://dana3711.tistory.com/67)

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Jekyll] 깃 블로그 꾸미기 (블꾸) - 1 프로필, 폰트"
+title: "[Jekyll] 깃 블로그 꾸미기(블꾸) (1) - 프로필, 폰트"
 categories: Jekyll
 
 tags: [Blog, Git, Profile]
