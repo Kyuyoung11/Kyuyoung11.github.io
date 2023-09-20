@@ -24,8 +24,8 @@ last_modified_at: 2023-09-08
 ## 2. 머릿말 작성 
 
 
-````
----
+```` text
+--- 
 layout: post
 title: "깃 블로그 포스팅 방법"
 categories: Jekyll

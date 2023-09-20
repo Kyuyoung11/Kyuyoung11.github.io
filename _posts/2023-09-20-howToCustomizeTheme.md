@@ -31,7 +31,7 @@ last_modified_at: 2023-09-20
 
 ## 2. 프로젝트에서 div id 검색해서, css 파일에 set 해주기
 div id인 c-wrap-content 에다가 table 설정 내용을 넣어주면 됨~
-````
+```` css
 .c-wrap-content {
   padding: 20px;
   background-color: $white-color;

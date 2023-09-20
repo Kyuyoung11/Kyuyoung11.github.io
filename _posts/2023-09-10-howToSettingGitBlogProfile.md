@@ -16,7 +16,7 @@ last_modified_at: 2023-09-12
 ---
 ## 1. 프로필 설정
 바꾸고싶은 화면 소스를 보니, 어딘가에서 setting 하고 있는듯
-````
+```` html
 home.html
     ...
     <div class="c-author__info">
@@ -26,7 +26,7 @@ home.html
     ...
 ````
 
-````
+```` yml
 _config.yml
 
 # Author
@@ -52,7 +52,7 @@ about-author:   I am a web developer focusing on front-end development. Always h
 <br/>  
 
 ### (2) main.scss에 붙여넣기
-````
+```` css
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
 ````
 
@@ -60,7 +60,7 @@ about-author:   I am a web developer focusing on front-end development. Always h
 
 ### (3) 사용할 css 파일에 넣기
 내가 쓰는 테마는 뭔가 변수같이 쓸 수 있게 해둔듯
-````
+```` css
 _typography.scss
 
 $base-font-family: "Nanum Gothic Coding", 'Open Sans', Helvetica Neue, Helvetica, Arial, sans-serif;

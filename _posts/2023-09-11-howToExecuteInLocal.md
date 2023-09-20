@@ -19,17 +19,18 @@ https://rubyinstaller.org/downloads/
 
 ---
 ## 2. Jekyll 설치
-````
+```` shell
 $ gem install bundler jekyll
 ````
 
----
+--- 
 ## 3. $ bundle install  
-````
+````shell
 $ bundle install 
 ````
 -> 아래 오류난다. 'untaint' 뭘까.....
-````
+```` text
+ [오류메시지]
  undefined method `untaint' for "C:/workspace/gitblog/flexton-master":String (NoMethodError)
  current  = File.expand_path(SharedHelpers.pwd).untaint
 ````
@@ -45,14 +46,14 @@ $ bundle add webrick
 
 그 외에 확인해본 내용 
 * Gemfile.lock에 적혀있는 번들 버전 -> 다시받고싶으면 아래와 같이 치면 됨
-````
+```` shell
 $ gem cleanup
 $ gem install bundler
 ````
 
 ---
 ## 4.실행
-````
+```` shell
 $ bundle exec jekyll serve
 ````
 
