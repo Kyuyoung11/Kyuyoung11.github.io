@@ -1,32 +1,36 @@
 ---
 layout: post
-title: "[GitBlog] 블꾸 (2) - 표 디자인 변경"
+title: "[GitBlog] 블꾸 (3) - 카테고리 사이드바 만들기"
 categories: 
   - GitBlog
 
-tags: [Blog, Git, Profile]
+tags: [Blog, Git, Profile, Jekyll, Flexton]
 toc: true
 toc_sticky : true
-date: 2023-09-20
-last_modified_at: 2023-09-20
+date: 2023-09-24
+last_modified_at: 2023-09-24
 
 ---
 
 
 
 ---
-글에 들어가는 표가 테두리가 없음   
-오잉?  
-![]({{site.baseurl}}/images/230920/before.PNG)  
+카테고리는 역시 프로필 아래에 있어야 편한 것 같아서 추가하기로 결정
 
 ---
-## 1. 개발자도구로 html에서 확인
-![]({{site.baseurl}}/images/230920/2.png)  
-### html 내용 확인
-1. 개발자도구(f12) 열고, Ctrl+Shift+C 혹은 왼쪽상단 버튼 누르기
-2. 표 클릭   
+## 1. 포스트 머릿말에 카테고리 작성 확인
+````markdown
+layout: post
+title: "[GitBlog] 블꾸 (3) - 카테고리 만들기"
 
--> 표 id같은게 있는지 확인~ (난 없음) 
+categories: GitBlog << 이 부분
+
+tags: [Blog, Git, Profile, Jekyll]
+toc: true
+toc_sticky : true
+date: 2023-09-24
+last_modified_at: 2023-09-24
+````
 
 ---
 
@@ -85,8 +89,8 @@ div id인 c-wrap-content 에다가 table 설정 내용을 넣어주면 됨~
 ---
 
 ## 참고 사이트
-표 스타일 CSS - border-collapse / border-spacing - [https://mine002.tistory.com/160](https://mine002.tistory.com/160)
-
+[Github 블로그] minimal-mistake 블로그 카테고리 만들기 (+ 전체 글 수) - [https://ansohxxn.github.io/blog/category/](https://ansohxxn.github.io/blog/category/)  
+[minimal-mistakes] 카테고리(category) 만들기 [https://x2info.github.io/minimal-mistakes/%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC_%EB%A7%8C%EB%93%A4%EA%B8%B0/](https://x2info.github.io/minimal-mistakes/%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC_%EB%A7%8C%EB%93%A4%EA%B8%B0/)
 ---
 
 ## 앞으로 하고싶은거

@@ -1,5 +1,5 @@
-title: 규
-description: Flexton is a responsive and ultra-minimal theme for Jekyll.
+title: 규!
+description: 개발 블로그
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://localhost:4000" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -25,8 +25,12 @@ social-linkedin:
 mailchimp: # Add your MailChimp form identifier. For example - blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e
 
 # Google Analytics
-google-analytics: # Add your identifier. For example UA-99631805-1
-
+analytics:
+  provider               : "google-gtag"
+  # false (default), "google", "google-universal", "google-gtag", "custom"
+  google:
+    tracking_id          : "G-H0EJMY0THF"
+    anonymize_ip         : # true, false (default)
 # Comment Section (Disqus)
 #disqus-identifier: mr-brown # Add your shortname for Disqus Comment. For example mr-brown
 
@@ -53,3 +57,19 @@ exclude:
   - vendor
 
 future: true
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+      mathjax: true
+      sidebar_main: true

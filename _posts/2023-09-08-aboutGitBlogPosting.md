@@ -1,8 +1,10 @@
 ---
 layout: post
-title: "[Jekyll] 깃 블로그 포스팅 방법"
-categories: Jekyll
-tags: [Blog, Git, Posting]
+title: "[GitBlog] 포스팅 방법"
+categories: 
+  - GitBlog
+  
+tags: [Blog, Git, Posting, Jekyll]
 
 toc: true
 toc_sticky : true

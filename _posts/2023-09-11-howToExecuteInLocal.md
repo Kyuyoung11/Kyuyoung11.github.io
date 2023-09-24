@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "[Jekyll] 깃 블로그 로컬로 돌리기"
-categories: Jekyll
-tags: [Blog, Git, Local]
+title: "[GitBlog] 깃 블로그 로컬로 돌리기"
+categories: GitBlog
+tags: [Blog, Git, Local, Jekyll]
 
 toc: true
 toc_sticky : true

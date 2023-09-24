@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "[Jekyll] 깃 블로그 꾸미기(블꾸) (1) - 프로필, 폰트"
-categories: Jekyll
+title: "[GitBlog] 블꾸 (1) - 프로필, 폰트"
+categories: 
+  - GitBlog
 
-tags: [Blog, Git, Profile]
+tags: [Blog, Git, Profile, Jekyll]
 toc: true
 toc_sticky : true
 date: 2023-09-10
@@ -43,6 +44,9 @@ about-author:   I am a web developer focusing on front-end development. Always h
 ## 2. 폰트 설정
 
 ### (1) 구글폰트에서 폰트 고르기  
+[https://fonts.google.com/?subset=korean](https://fonts.google.com/?subset=korean)
+
+
 난 나눔고딕코딩 픽   
 [https://fonts.google.com/specimen/Nanum+Gothic+Coding?query=coding](https://fonts.google.com/specimen/Nanum+Gothic+Coding?query=coding)
 
@@ -71,8 +75,6 @@ $heading-font-family: "Nanum Gothic Coding", 'Volkhov', 'Times New Roman', Times
 <br/>  
 
 ### (4) 확인
-![]({{site.baseurl}}/images/230910/230911_3.PNG)
-
 
 ---
 ## 참고 사이트

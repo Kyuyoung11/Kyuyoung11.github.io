@@ -1,7 +1,9 @@
 ---
 layout: post
 title: "[Spring] 스프링 핵심 원리 - 기본편 (1) - 객체 지향 설계와 스프링"
-categories: Spring
+categories: 
+  - Spring
+
 tags: [Spring, 인프런]
 
 toc: true
@@ -137,6 +139,7 @@ MemberRepository memberRepository = new MemoryMemberRepository();
 #### 정리
 - 다형성만으로는 OCP와 DIP를 지킬 수 없다.
 - 쉽게 갈아끼울 수 있어야 한다는 것이 핵심.
+- OCP랑 DIP가 중요
 
 ----
 ### (5) 객체 지향 설계와 스프링
