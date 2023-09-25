@@ -72,6 +72,21 @@
   }
 }
 
+.c-sidebar-nav {
+  .nav {
+    .ul {
+      .li {
+        span {
+          float: left;
+          text-align: left;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+  }
+}
+
 .c-sidebar-footer {
   .c-social__title {
     position: relative;

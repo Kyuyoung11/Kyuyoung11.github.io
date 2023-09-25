@@ -82,7 +82,7 @@
     .c-post-content {
       width: 100%;
       .c-post-title {
-        font-size: 23px;
+        font-size: 20px;
         margin: 15px 0;
       }
     }
@@ -93,12 +93,14 @@
   .c-post {
     width: 100%;
     max-width: 100%;
-    margin: 0 0 20px;
+    min-height: 15px;
+    margin: 0 0 10px;
     .c-post-content {
       width: 100%;
+      flex-wrap: nowrap;
       .c-post-title {
-        font-size: 21px;
-        margin: 15px 0;
+        font-size: 15px;
+        margin: 13px 0;
       }
     }
   }

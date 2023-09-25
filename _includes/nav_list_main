@@ -1,40 +1,22 @@
  {% assign sum = site.posts | size %}
   <nav class="nav__list">
-    <input id="ac-toc" name="accordion-toc" type="checkbox" />
-    <label for="ac-toc">토글 메뉴</label>
     <ul class="nav__items" id="category_tag_menu">
         <li>
-              📂 <span style="">전체 글 수</style> <span style=""></style> <span style="">개</style>
+              📂 <span style="">전체 글 수</style> <span style="">{{sum}}</style> <span style="">개</style>
         </li>
         <li>
           <span class="nav__sub-title">Java</span>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "spring" %}
-                          <li><a href="/categories/spring" class="">Spring ()</a></li>
+                      {% if category[0] == "Spring" %}
+                          <li><a href="/category/spring/" class="">Spring ({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}
               </ul>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "DL" %}
-                          <li><a href="/categories/DL" class="">딥러닝 ()</a></li>
-                      {% endif %}
-                  {% endfor %}
-              </ul>
-          <span class="nav__sub-title">대외활동</span>
-              <ul>
-                  {% for category in site.categories %}
-                      {% if category[0] == "Internship" %}
-                          <li><a href="/categories/Internship" class="">인턴 ()</a></li>
-                      {% endif %}
-                  {% endfor %}
-              </ul>
-          <span class="nav__sub-title">etc</span>
-              <ul>
-                  {% for category in site.categories %}
-                      {% if category[0] == "Blog" %}
-                          <li><a href="/categories/Blog" class="">Blog Dev ()</a></li>
+                      {% if category[0] == "TDD" %}
+                          <li><a href="/category/tdd/" class="">TDD & Clean Code ({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}
               </ul>
