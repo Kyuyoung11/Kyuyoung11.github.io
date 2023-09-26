@@ -2,7 +2,6 @@
 title: "TDD"
 layout: category-page
 permalink: category/tdd/
-author_profile: true
 sidebar_main: true
 ---
 
