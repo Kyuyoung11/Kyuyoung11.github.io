@@ -4,8 +4,14 @@
         <li>
               📂 <span style="">전체 글 수</style> <span style="">{{sum}}</style> <span style="">개</style>
         </li>
+        <hr>
         <li>
-          <span class="nav__sub-title">Java</span>
+            {% for category in site.categories %}
+                {% if category[0] == "Java" %}
+                    <span class="nav__sub-title"> <a href="/category/java/">Java ({{category[1].size}})</a>
+                    </span>
+                {% endif %}
+            {% endfor %}
               <ul>
                   {% for category in site.categories %}
                       {% if category[0] == "Spring" %}
@@ -20,6 +26,15 @@
                       {% endif %}
                   {% endfor %}
               </ul>
+        </li>
+        <hr>
+        <li>
+            {% for category in site.categories %}
+                {% if category[0] == "GitBlog" %}
+                    <span class="nav__sub-title"> <a href="/category/gitblog/">Git Blog ({{category[1].size}})</a>
+                    </span>
+                {% endif %}
+            {% endfor %}
         </li>
     </ul>
   </nav>

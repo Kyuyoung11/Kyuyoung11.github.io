@@ -2,6 +2,7 @@
 layout: post
 title: "[Spring] 스프링 핵심 원리 - 기본편 (1) - 객체 지향 설계와 스프링"
 categories: 
+  - Java
   - Spring
 
 tags: [Spring, 인프런]
