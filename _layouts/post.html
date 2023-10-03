@@ -55,6 +55,13 @@ layout: home
             </div>
           </div>
         {% else %}
+          <div class="c-recent__item"><div class="c-recent__footer">
+              <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+              <div class="c-recent__date">
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{post.date | date: "%B %-d, %Y"}}</time>
+              </div>
+            </div>
+          </div>
         {% endif %}
         {% endfor %}
         </div>
