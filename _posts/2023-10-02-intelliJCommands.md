@@ -37,6 +37,10 @@ Ctrl + Alt + L
 파일/디렉토리 누르고 Ctrl + Shift + F10
 
 ----
+### 오류난 곳으로 바로 이동
+F2
+
+----
 ### Java - Main 메소드 생성
 psvm + tab
 ```` java
@@ -46,3 +50,17 @@ psvm + tab
 ### Java - 선언/구현 부분으로 가기
 - 선언 : Ctrl + B
 - 구현 : Ctrl + Alt + B
+
+----
+### Java - ; 붙여서 한줄 자동완성
+Ctrl + Shift + Enter
+
+----
+### Java - 클래스 생성 자동완성
+Ctrl + Alt + v
+
+----
+### Java - System.out.println
+sout
+
+----
