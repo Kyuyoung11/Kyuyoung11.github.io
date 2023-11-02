@@ -2,12 +2,15 @@
 	COLORS
 =============== */
 
-$primary-color: #33aaff;
+$primary-color: #0073c1;
 $secondary-color: #cfcfdd;
 $alternate-color: #404040;
 $red-color: #ee6c6c;
 $green-color: #55bf55;
 $white-color: #ffffff;
+
+$main-color: #f2afc5;
+$cheek-color: #ea6998;
 
 
 $dark: #222222;
@@ -49,3 +52,10 @@ $link-color-hover: darken($link-color, 15%);
 // Border
 $border-color: #f0f0f0;
 $border-color-post: #d0ced0;
+
+$active-color: mix(#fff, $primary-color, 80%) !default;
+/* YIQ color contrast */
+$yiq-contrasted-dark-default: $dark-gray !default;
+$yiq-contrasted-light-default: #fff !default;
+$yiq-contrasted-threshold: 175 !default;
+$yiq-debug: false !default;
