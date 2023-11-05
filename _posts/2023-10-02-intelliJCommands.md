@@ -8,7 +8,7 @@ tags: [IntelliJ, Command, Windows]
 toc: true
 toc_sticky : true
 date: 2023-10-02
-last_modified_at: 2023-10-02
+last_modified_at: 2023-11-05
 ---
 
 ### 파일 생성
@@ -23,6 +23,14 @@ alt + insert
 ----
 ### 전체 검색 
 Shift shift
+
+----
+### 전체 파일 내 검색
+Ctrl + Shift + F
+
+----
+### 전체 파일 내 Replace
+Ctrl + Shift + R
 
 ----
 ### File Rename
@@ -64,3 +72,9 @@ Ctrl + Alt + v
 sout
 
 ----
+### 이전에 열었던 파일 History
+Ctrl + e
+
+----
+### Extract Method
+Ctrl + Alt + M
