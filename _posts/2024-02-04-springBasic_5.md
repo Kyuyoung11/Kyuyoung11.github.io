@@ -72,3 +72,22 @@ public class SingletonService {
   - 특정 클라이언트에 의존적인 필드가 있으면 안됨
   - 값을 변경할 수 있는 필드가 있으면 안됨
   - 가급적 읽기만!
+
+<br />
+
+---
+### @Configuration과 바이트코드 조작의 마법
+
+<br />
+
+![]({{site.baseurl}}/images/4/7.PNG)
+- AppConfig 클래스를 상속받은 임의의 다른 클래스를 만들고, 그걸 스프링빈으로 등록해서 싱글톤이 보장되도록 해준다.
+
+<br />
+
+![]({{site.baseurl}}/images/4/8.PNG)
+- @Configuration 어노테이션을 사용한 클래스가 이렇게 적용되는 것
+
+#### 만약 @Configuration을 쓰지않고, AppConfig를 사용한다면?
+-> 스프링빈 등록은 가능하나, 싱글톤을 보장하지 않음
+
