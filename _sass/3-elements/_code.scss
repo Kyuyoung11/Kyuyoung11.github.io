@@ -9,10 +9,56 @@ code {
   word-break: break-all;
   font-family: "Nanum Gothic Coding", Courier, monospace;
   font-size: 14px;
-  background-color: #eef;
+  background-color: #ffffff;
 }
 
 p code,
 li code {
   padding: 3px 5px;
+}
+
+
+/* Line Number CSS */
+/* for block of numbers */
+.hljs-ln-numbers {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  text-align: center;
+  color: #ccc;
+  border-right: 1px solid #CCC;
+  vertical-align: top;
+  padding-right: 50px;
+
+  /* your custom style here */
+}
+
+.hljs-ln td.hljs-ln-numbers {
+  padding-right: 10px;
+}
+
+
+
+/* for block of code */
+.hljs-ln-code {
+  padding-left: 10px;
+}
+
+.hljs-ln td.hljs-ln-code {
+  padding-left: 10px;
+}
+
+
+
+
+pre > code {
+  margin: 1rem auto;
+  white-space: pre;
+  max-width:850px;
+  max-height:500px;
+  overflow:auto !important; /* scroll setting */
 }

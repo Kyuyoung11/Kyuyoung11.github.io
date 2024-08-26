@@ -10,19 +10,22 @@
 .c-wrap-content {
   padding: 20px;
   background-color: $white-color;
-  table {
-    display: block;
-    margin-bottom: 1em;
-    width: 100%;
-    font-family: $base-font-family;
-    font-size: $base-font-size;
-    border-collapse: collapse;
-    overflow-x: auto;
+}
 
-    & + table {
-      margin-top: 1em;
-    }
+.c-wrap-content > table{
+
+  display: block;
+  margin-bottom: 1em;
+  width: 100%;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  border-collapse: collapse;
+  overflow-x: auto;
+
+  & + table {
+    margin-top: 1em;
   }
+
 
   thead {
     background-color: $sub-background;
