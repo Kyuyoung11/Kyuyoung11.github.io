@@ -9,7 +9,7 @@ code {
   word-break: break-all;
   font-family: "Nanum Gothic Coding", Courier, monospace;
   font-size: 14px;
-  background-color: #ffffff;
+  background-color: #f5e3ea;
 }
 
 p code,
@@ -32,7 +32,7 @@ li code {
   color: #ccc;
   border-right: 1px solid #CCC;
   vertical-align: top;
-  padding-right: 50px;
+  //padding-right: 50px;
 
   /* your custom style here */
 }
@@ -57,8 +57,8 @@ li code {
 
 pre > code {
   margin: 1rem auto;
-  white-space: pre;
-  max-width:850px;
-  max-height:500px;
+  //white-space: pre;
+  //max-width:flex;
+  max-height:700px;
   overflow:auto !important; /* scroll setting */
 }
