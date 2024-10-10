@@ -1,17 +1,17 @@
 ---
 layout: post
-title: "[Spring] 스프링 핵심 원리 - 기본편 (7) 의존관계 자동 주입"
+title: "[김영한의 실전 자바] 중급 1편 - 강의를 시작하며"
 categories: 
   - Java
-  - Spring
+  - Intermediate
 
-tags: [Spring, 인프런]
+tags: [자바 중급, 인프런]
 
 toc: true
 toc_sticky : true
 
-date: 2024-09-20
-last_modified_at: 2024-09-20
+date: 2024-10-11
+last_modified_at: 2024-10-11
 ---
 
 ## 섹션 8. 의존관계 자동 주입
