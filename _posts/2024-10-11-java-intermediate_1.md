@@ -226,3 +226,71 @@ public class ToStringMain2 {
 Integer.toHexString(System.identityHashCode(dog1));
 ````
 - HashCode를 16진수로 변환하는거임
+
+<br /><br /><br />
+
+---
+## equals()
+
+### 1. 동일성과 동등성
+- 동일성(Identity) : ``==``연산자를 사용해서 참조가 동일한 객체를 가리키는지 확인
+- 동등성(Equality) : ``equals()`` 메서드를 사용하여 두 객체가 논리적으로 동등한지 확인
+
+````java
+        UserV1 userV1 = new UserV1("id-100");
+        UserV1 userV2 = new UserV1("id-100");
+
+        System.out.println("identity = " + (userV1 == userV2)); // false
+        System.out.println("equality = " + (userV1.equals(userV2))); // false
+````
+- 둘 다 false임
+  - Object에서 기본으로 제공하는 ``equals()`` 는 ``==``으로 동일성 비교를 제공함
+  - ````java
+      public boolean equals(Object obj) {
+          return (this == obj);
+      }
+    ````
+
+-> 동등성을 비교하고 싶으면 메서드를 재정의해서 사용해야한다.
+
+
+<br /><br />
+
+### 2. 구현
+````java
+    @Override
+    public boolean equals(Object obj) {
+
+        UserV2 user = (UserV2) obj;
+
+        boolean result = id.equals((user.id));
+        return result;
+
+    }
+````
+- 이렇게 하고 다시 실행하면 equals 비교는 true임
+
+<br />
+
+**정확한 equals() 구현**
+````java
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UserV2 userV2 = (UserV2) o;
+        return Objects.equals(id, userV2.id);
+    }
+````
+- equals() 메서드를 구현할 때 지켜야 하는 규칙 - 반사성, 대칭성, 추이성, 일관성, null에 대한 비교
+
+<br /><br /><br />
+
+---
+## 정리
+
+**Object의 나머지 메서드**
+- ``clone()`` -> 객체를 복사
+- ``hashCode()`` -> equals()와 hashCode()는 종종 함께 사용.
+- ``getClass()`` -> Class 정보를 알 수 있음
+- ``notify()`` ... -> 멀티스레드 관련 메서드
