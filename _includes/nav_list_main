@@ -77,6 +77,7 @@
                 {% endif %}
             {% endfor %}
         </li>
+        <hr>
         <li>
             {% for category in site.categories %}
                 {% if category[0] == "Conference" %}
