@@ -62,6 +62,15 @@
         <hr>
         <li>
             {% for category in site.categories %}
+                {% if category[0] == "Salesforce" %}
+                    <span class="nav__sub-title"> <a href="/category/salesforce/">Salesforce ({{category[1].size}})</a>
+                    </span>
+                {% endif %}
+            {% endfor %}
+        </li>
+        <hr>
+        <li>
+            {% for category in site.categories %}
                 {% if category[0] == "GitBlog" %}
                     <span class="nav__sub-title"> <a href="/category/gitblog/">Git Blog ({{category[1].size}})</a>
                     </span>
