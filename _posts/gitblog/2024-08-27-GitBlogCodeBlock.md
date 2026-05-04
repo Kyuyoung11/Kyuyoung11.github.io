@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[GitBlog] 블꾸 (4) - 코드블록 디자인 넣기"
+title: "[GitBlog] 블꾸 (4) - highlight.js로 코드블록 테마 넣기"
 categories: 
   - GitBlog
 
@@ -8,7 +8,7 @@ tags: [Blog, Git, Gitio]
 toc: true
 toc_sticky : true
 date: 2024-08-27
-last_modified_at: 2024-08-27
+last_modified_at: 2026-05-05
 
 ---
 
@@ -20,29 +20,31 @@ last_modified_at: 2024-08-27
 - [https://slothspeed.tistory.com/44](https://slothspeed.tistory.com/44)
 
 ---
-## 1. 코드블럭 테마 넣기
-### html 코드 넣기
-아래 링크에서 Usage > HTML Tags 부분을 참고하면 된다.
+## 1. highlight.js 추가하기
+아래 링크에서 Usage 부분을 참고하면 된다.
 - [https://highlightjs.org/](https://highlightjs.org/)
-![]({{site.baseurl}}/images/4/240827_1.png)
 
-<br/>
-
-해당 내용을 \<head> ... \</head> 사이에 넣어주면 됨
+### HTML Tags 추가
+``As HTML Tags``에 있는 내용을 \<head> ... \</head> 사이에 넣어주면 됨
 
 ````html
 head.html
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 
-  <script>hljs.highlightAll();</script>
+<!-- and it's easy to individually load additional languages -->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>-->
+
+<script>hljs.highlightAll();</script>
 ````
 
 <br/><br/><br/>
 
-### 테마 적용 
-아래 링크에서 마음에 드는것으로 ``default.min.css`` 부분을 바꿔준다.
+---
+
+## 2. 테마 적용 
+Demo에서 마음에 드는 것으로 ``default.min.css`` 부분을 바꿔준다.
 - [https://highlightjs.org/demo](https://highlightjs.org/demo)
 - 난 ``atom-one-dark-reasonable.min.css`` 선택
   ![]({{site.baseurl}}/images/4/240827_2.png)
@@ -51,8 +53,8 @@ head.html
 
 ---
 
-## 2. 줄번호 생성
-### html 코드 넣기
+## 3. 줄번호 생성
+### highlightjs-line-numbers.js 코드 넣기
 아래 링크에서 README를 참고
 - [https://github.com/wcoder/highlightjs-line-numbers.js](https://github.com/wcoder/highlightjs-line-numbers.js)
 
@@ -69,7 +71,7 @@ head.html
 <br/>
 
 ### 줄 없애는 방법
-나는 이런 식으로 이상하게 줄이 생성되었다. 
+나는 이런 식으로 이상하게 줄이 생성되었다. 표로 인식해서 그런건지~
 ![]({{site.baseurl}}/images/4/240827_3.png)
 
 <br/>
