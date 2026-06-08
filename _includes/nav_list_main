@@ -60,14 +60,7 @@
             {% endfor %}
         </li>
         <hr>
-        <li>
-            {% for category in site.categories %}
-                {% if category[0] == "Salesforce" %}
-                    <span class="nav__sub-title"> <a href="/category/salesforce/">Salesforce ({{category[1].size}})</a>
-                    </span>
-                {% endif %}
-            {% endfor %}
-        </li>
+        {%- comment -%} Salesforce 숨김처리 {%- endcomment -%}
         <hr>
         <li>
             {% for category in site.categories %}

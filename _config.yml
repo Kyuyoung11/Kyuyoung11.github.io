@@ -56,6 +56,13 @@ future: true
 
 # Defaults
 defaults:
+  # salesforce 카테고리 숨김
+  - scope:
+      path: "_posts/salesforce"
+      type: posts
+    values:
+      published: false
+
   # _posts
   - scope:
       path: ""
