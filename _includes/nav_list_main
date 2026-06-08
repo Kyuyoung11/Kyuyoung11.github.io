@@ -95,5 +95,14 @@
                 {% endif %}
             {% endfor %}
         </li>
+        <hr>
+        <li>
+            {% for category in site.categories %}
+                {% if category[0] == "ClaudeCode" %}
+                    <span class="nav__sub-title"> <a href="/category/claudecode/">Claude Code ({{category[1].size}})</a>
+                    </span>
+                {% endif %}
+            {% endfor %}
+        </li>
     </ul>
   </nav>
