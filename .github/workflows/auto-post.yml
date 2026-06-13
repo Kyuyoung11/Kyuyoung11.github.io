@@ -1,0 +1,31 @@
+name: IT 기술동향 자동 포스팅
+
+on:
+  # 매일 오전 9시 (KST) 자동 실행 = UTC 00:00
+  schedule:
+    - cron: '0 0 * * *'
+
+  # GitHub Actions 탭에서 수동 버튼 클릭으로도 실행 가능
+  workflow_dispatch:
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 코드 체크아웃
+        uses: actions/checkout@v4
+
+      - name: Python 설치
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 의존성 설치
+        run: pip install requests
+
+      - name: 포스트 생성 및 커밋
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GITHUB_TOKEN:   ${{ secrets.GITHUB_TOKEN }}
+        run: python auto_post.py
