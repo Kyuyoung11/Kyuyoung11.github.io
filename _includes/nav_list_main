@@ -61,7 +61,6 @@
         </li>
         <hr>
         {%- comment -%} Salesforce 숨김처리 {%- endcomment -%}
-        <hr>
         <li>
             {% for category in site.categories %}
                 {% if category[0] == "GitBlog" %}

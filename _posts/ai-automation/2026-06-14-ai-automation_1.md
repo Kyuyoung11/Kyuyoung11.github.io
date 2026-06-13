@@ -147,17 +147,6 @@ Actions 워크플로우에서 기본으로 제공되는 `GITHUB_TOKEN`을 그대
 <br><br>
 
 ---
-## 삽질 포인트
-
-### `.github/workflow` → `.github/workflows`
-
-GitHub Actions는 `.github/workflows/` 경로만 인식한다. `workflows`에 **s**가 빠지면 아무리 커밋해도 Actions 탭에 아무것도 나타나지 않는다.
-
-처음에 `workflow`(단수)로 폴더를 만들어서 Action이 전혀 실행되지 않는 문제가 있었다. 폴더명 하나 차이인데 에러 메시지도 없어서 찾기가 쉽지 않다.
-
-<br><br>
-
----
 ## 카테고리 구조
 
 이 자동화 작업을 기록하면서 블로그 카테고리도 정리했다.
