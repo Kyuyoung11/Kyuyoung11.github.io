@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "[Claude Code] Claude Code로 서점 웹 만들기 - 테스트 코드 & 장바구니 기능"
-categories: 
+categories:
+  - AI
   - ClaudeCode
 
 tags: [ClaudeCode, AI, SpringBoot, Java]

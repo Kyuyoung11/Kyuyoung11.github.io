@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "[Claude Code] Claude Code 시작하기 - 설치 및 기본 사용법"
-categories: 
+categories:
+  - AI
   - ClaudeCode
 
 tags: [ClaudeCode, AI, 개발도구]
