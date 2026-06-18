@@ -28,4 +28,4 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_TOKEN:   ${{ secrets.GITHUB_TOKEN }}
-        run: python auto_post.py
+        run: python .github/workflows/auto_post.py
