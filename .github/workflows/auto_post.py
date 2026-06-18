@@ -42,7 +42,7 @@ def generate_post() -> dict:
 }}
 """
 
-    models = ["gemini-1.5-flash", "gemini-2.0-flash"]
+    models = ["gemini-2.0-flash-lite", "gemini-2.0-flash"]
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {"temperature": 0.7}
