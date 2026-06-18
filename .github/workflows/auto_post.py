@@ -2,6 +2,7 @@ import os
 import re
 import json
 import base64
+import time
 import requests
 from datetime import datetime, timezone, timedelta
 
@@ -41,13 +42,27 @@ def generate_post() -> dict:
 }}
 """
 
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={GEMINI_API_KEY}"
+    models = ["gemini-1.5-flash", "gemini-2.0-flash"]
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {"temperature": 0.7}
     }
 
-    resp = requests.post(url, json=payload, timeout=60)
+    resp = None
+    for attempt, model in enumerate(models):
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={GEMINI_API_KEY}"
+        for retry in range(3):
+            resp = requests.post(url, json=payload, timeout=60)
+            if resp.status_code == 429:
+                wait = 30 * (retry + 1)
+                print(f"⚠️  429 Too Many Requests ({model}), {wait}초 후 재시도...")
+                time.sleep(wait)
+                continue
+            break
+        if resp.status_code != 429:
+            break
+        print(f"⚠️  {model} 한도 초과, 다음 모델로 전환...")
+
     resp.raise_for_status()
 
     raw = resp.json()["candidates"][0]["content"]["parts"][0]["text"]
