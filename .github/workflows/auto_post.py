@@ -2,26 +2,25 @@ import os
 import re
 import json
 import base64
-import time
 import requests
+import anthropic
 from datetime import datetime, timezone, timedelta
 
 # ── 설정 ──────────────────────────────────────────────────────────────
-GEMINI_API_KEY = os.environ["GEMINI_API_KEY"]
-GITHUB_TOKEN   = os.environ["GITHUB_TOKEN"]
-GITHUB_REPO    = "Kyuyoung11/Kyuyoung11.github.io"
-BRANCH         = "master"
-POSTS_PATH     = "_posts"
+ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
+GITHUB_TOKEN      = os.environ["GITHUB_TOKEN"]
+GITHUB_REPO       = "Kyuyoung11/Kyuyoung11.github.io"
+BRANCH            = "master"
+POSTS_PATH        = "_posts"
 
 KST = timezone(timedelta(hours=9))
 TODAY = datetime.now(KST).strftime("%Y-%m-%d")
 
-# ── 1. Gemini로 최신 IT 기술동향 뉴스 수집 + 포스트 생성 ──────────────
+# ── 1. Claude로 최신 IT 기술동향 포스트 생성 ──────────────────────────
 def generate_post() -> dict:
-    """Gemini에게 최신 IT 기술동향을 검색하고 블로그 포스트로 작성 요청"""
+    client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
-    prompt = f"""
-오늘({TODAY}) 기준 최신 IT 기술동향 뉴스를 조사하고, Jekyll 블로그용 마크다운 포스트를 작성해줘.
+    prompt = f"""오늘({TODAY}) 기준 최신 IT 기술동향 뉴스를 조사하고, Jekyll 블로그용 마크다운 포스트를 작성해줘.
 
 블로그 카테고리: News (IT 기술동향 뉴스를 정리하는 카테고리)
 
@@ -39,35 +38,15 @@ def generate_post() -> dict:
   "title": "포스트 제목 (한국어, [IT동향] 접두사 포함)",
   "tags": ["tag1", "tag2", "tag3"],
   "content": "마크다운 본문 내용 (front matter 제외)"
-}}
-"""
+}}"""
 
-    models = ["gemini-2.0-flash-lite", "gemini-2.0-flash"]
-    payload = {
-        "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"temperature": 0.7}
-    }
+    message = client.messages.create(
+        model="claude-haiku-4-5",
+        max_tokens=2048,
+        messages=[{"role": "user", "content": prompt}],
+    )
 
-    resp = None
-    for attempt, model in enumerate(models):
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={GEMINI_API_KEY}"
-        for retry in range(3):
-            resp = requests.post(url, json=payload, timeout=60)
-            if resp.status_code == 429:
-                wait = 30 * (retry + 1)
-                print(f"⚠️  429 Too Many Requests ({model}), {wait}초 후 재시도...")
-                time.sleep(wait)
-                continue
-            break
-        if resp.status_code != 429:
-            break
-        print(f"⚠️  {model} 한도 초과, 다음 모델로 전환...")
-
-    resp.raise_for_status()
-
-    raw = resp.json()["candidates"][0]["content"]["parts"][0]["text"]
-
-    # JSON 파싱 (코드블록 제거)
+    raw = message.content[0].text
     raw = re.sub(r"```json|```", "", raw).strip()
     return json.loads(raw)
 

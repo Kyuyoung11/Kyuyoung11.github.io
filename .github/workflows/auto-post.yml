@@ -22,10 +22,10 @@ jobs:
           python-version: '3.11'
 
       - name: 의존성 설치
-        run: pip install requests
+        run: pip install anthropic requests
 
       - name: 포스트 생성 및 커밋
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GITHUB_TOKEN:   ${{ secrets.GITHUB_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN:      ${{ secrets.GITHUB_TOKEN }}
         run: python .github/workflows/auto_post.py
