@@ -11,7 +11,7 @@ ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
 GITHUB_TOKEN      = os.environ["GITHUB_TOKEN"]
 GITHUB_REPO       = "Kyuyoung11/Kyuyoung11.github.io"
 BRANCH            = "master"
-POSTS_PATH        = "_posts"
+POSTS_PATH        = "_posts/news"
 
 KST = timezone(timedelta(hours=9))
 TODAY = datetime.now(KST).strftime("%Y-%m-%d")
