@@ -16,16 +16,56 @@ POSTS_PATH        = "_posts/news"
 KST = timezone(timedelta(hours=9))
 TODAY = datetime.now(KST).strftime("%Y-%m-%d")
 
-# ── 1. Claude로 최신 IT 기술동향 포스트 생성 ──────────────────────────
-def generate_post() -> dict:
+# ── 1. 최근 7일 포스트 제목 조회 ─────────────────────────────────────
+def get_recent_titles() -> list[str]:
+    headers = {
+        "Authorization": f"token {GITHUB_TOKEN}",
+        "Accept": "application/vnd.github.v3+json"
+    }
+    api_url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{POSTS_PATH}"
+    resp = requests.get(api_url, headers=headers)
+    if resp.status_code != 200:
+        return []
+
+    cutoff = datetime.now(KST) - timedelta(days=7)
+    titles = []
+    for item in resp.json():
+        # 파일명에서 날짜 파싱: YYYY-MM-DD-slug.md
+        match = re.match(r"(\d{4}-\d{2}-\d{2})", item["name"])
+        if not match:
+            continue
+        post_date = datetime.strptime(match.group(1), "%Y-%m-%d").replace(tzinfo=KST)
+        if post_date >= cutoff:
+            # 제목을 가져오기 위해 파일 내용에서 front matter 파싱
+            file_resp = requests.get(item["url"], headers=headers)
+            if file_resp.status_code != 200:
+                continue
+            content = base64.b64decode(file_resp.json()["content"]).decode("utf-8")
+            title_match = re.search(r'^title:\s*["\']?(.+?)["\']?\s*$', content, re.MULTILINE)
+            if title_match:
+                titles.append(title_match.group(1).strip())
+
+    return titles
+
+
+# ── 2. Claude로 최신 IT 기술동향 포스트 생성 ──────────────────────────
+def generate_post(recent_titles: list[str]) -> dict:
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+
+    exclude_section = ""
+    if recent_titles:
+        titles_str = "\n".join(f"  - {t}" for t in recent_titles)
+        exclude_section = f"""
+최근 7일간 이미 다룬 주제 (아래 주제와 겹치지 않도록 완전히 다른 주제를 선택해):
+{titles_str}
+"""
 
     prompt = f"""오늘({TODAY}) 기준 최신 IT 기술동향 뉴스를 조사하고, Jekyll 블로그용 마크다운 포스트를 작성해줘.
 
 블로그 카테고리: News (IT 기술동향 뉴스를 정리하는 카테고리)
 
 주제: AI 모델/서비스 업데이트, 개발 자동화 도구, LLM 활용 사례, 클라우드 AI 서비스, 오픈소스 AI, 개발자 생산성 도구 등
-
+{exclude_section}
 조건:
 - 실제 최근 뉴스/트렌드를 기반으로 작성 (가능한 한 최신 정보 반영)
 - 포스트는 800~1200자 분량
@@ -99,7 +139,11 @@ def commit_to_github(filename: str, content: str):
 if __name__ == "__main__":
     print(f"📰 {TODAY} IT 기술동향 포스트 생성 중...")
 
-    post = generate_post()
+    recent_titles = get_recent_titles()
+    if recent_titles:
+        print(f"🚫 최근 7일 제외 주제: {recent_titles}")
+
+    post = generate_post(recent_titles)
     print(f"📝 제목: {post['title']}")
 
     markdown = build_markdown(post)
