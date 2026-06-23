@@ -1,57 +1,136 @@
-<h1>블로그 주소</h1>
-https://kyuyoung11.github.io/
-<br><br><br>
-아래부터는 Flexton readme 내용
-<hr>
-<h1>Flexton is an ultra-minimalist and responsive theme for Jekyll</h1>
+# 규의 개발 블로그
 
-<p>Flexton created especially for those who appreciate minimalism and functionality.</p>
-<p>Amazing flexibility with pleasant colors and custom design makes Flexton a simple theme, suitable for almost any blog.</p>
+> **[kyuyoung11.github.io](https://kyuyoung11.github.io/)** — Jekyll 기반 개인 기술 블로그
 
-<h2>Demo</h2>
+## 소개
 
-Check the theme in action [Demo](https://flexton.netlify.com/)
+Java, Spring, SQL, React 등 개발 학습 내용을 정리하고, AI/자동화 관련 최신 IT 기술동향을 매일 자동 포스팅하는 블로그입니다.
 
-![Page preview](https://github.com/artemsheludko/flexton/blob/master/images/preview.png?raw=true)
+---
 
-<h2>Features</h2>
+## 아키텍처
 
-<ul>
-	<li>100% responsive and clean theme</li>
- 	<li>Optimized for mobile devices</li>
-	<li>Valid HTML5 code</li>
-	<li>Included site search</li>
-	<li>Contact Page</li>
-	<li>Post sharing</li>
-	<li>Supports Mail Chimp Subscriber</li>
-	<li>Supports Disqus Comments</li>
-	<li>Social Media Profiles</li>
-	<li>Contact Form - FormsPree</li>
-	<li>Evil Icons</li>
-	<li>Google Fonts</li>
-</ul>
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                       자동 포스팅 파이프라인                           │
+│                                                                     │
+│  GitHub Actions (매일 09:00 KST)                                    │
+│         │                                                           │
+│         ▼                                                           │
+│  auto_post.py ──── GitHub API로 최근 7일 포스트 조회 (중복 방지)        │
+│         │                                                           │
+│         ▼                                                           │
+│  Claude Haiku API ──── IT 기술동향 포스트 생성 (800~1200자)            │
+│         │                                                           │
+│         ▼                                                           │
+│  GitHub API ──── _posts/news/ 에 직접 커밋 → 자동 배포               │
+└─────────────────────────────────────────────────────────────────────┘
 
-<h2>Credits</h2>
+┌─────────────────────────────────────────────────────────────────────┐
+│                        Jekyll 블로그 구조                             │
+│                                                                     │
+│  _posts/          ← 마크다운 게시글 (카테고리별 서브디렉토리)             │
+│  _layouts/        ← default → home → post / category-page          │
+│  _includes/       ← nav_list_main (사이드바), toc.html (목차)        │
+│  _plugins/        ← category-generator.rb (카테고리 페이지 자동 생성)  │
+│  _config.yml      ← 사이트 전체 설정                                  │
+│       │                                                             │
+│       ▼                                                             │
+│  bundle exec jekyll build → _site/                                  │
+└─────────────────────────────────────────────────────────────────────┘
 
-<p>I have used the following scripts, fonts or other files as listed.</p>
+┌─────────────────────────────────────────────────────────────────────┐
+│                          배포 & 외부 연동                             │
+│                                                                     │
+│  GitHub Pages ──── kyuyoung11.github.io                            │
+│  Flexton 테마  ──── 커스터마이징 CSS / Liquid                          │
+│  Google Analytics ─ 방문자 트래킹 (G-H0EJMY0THF)                    │
+└─────────────────────────────────────────────────────────────────────┘
+```
 
-<ul>
-  <li><a href="https://fonts.google.com/">Google Fonts</a> (Volkhov, Open Sans).</li>
-  <li><a href="http://evil-icons.io/">Evil Icons</a></li>
-  <li><a href="http://fitvidsjs.com/">FitVids.js</a></li>
-  <li><a href="https://jquery.com/">jQuery.com</a></li>
-  <li><a href="https://github.com/christian-fei/Simple-Jekyll-Search">Simple-Jekyll-Search</a></li>
-  <li>Preview Images form <a href="https://unsplash.com/">unsplash.com</a>, <a href="https://www.pexels.com/">pexels.com</a></li>
-</ul>
+---
 
-<h2>Deployment</h2>
+## 기술 스택
 
-To run the theme locally, navigate to the theme directory and run `bundle install` to install the dependencies, then run `jekyll serve` or `bundle exec serve` to start the Jekyll server.
+| 분류 | 기술 |
+|------|------|
+| 정적 사이트 생성 | [Jekyll](https://jekyllrb.com/) + Ruby + Bundler |
+| 마크다운 처리 | kramdown |
+| 테마 | [Flexton](https://github.com/artemsheludko/flexton) (커스터마이징) |
+| 호스팅 | GitHub Pages |
+| 자동 포스팅 | GitHub Actions + Python + Claude Haiku API |
+| 검색 | Simple-Jekyll-Search |
+| 분석 | Google Analytics |
 
-I would recommend checking the [Deployment Methods](https://jekyllrb.com/docs/deployment-methods/) page on Jekyll website.
+---
 
-<h2>Buy me a coffee</h2>
+## 주요 기능
 
-<p>If you want to show your appreciation, buy me one <a href="https://www.buymeacoffee.com/artemsheludko" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a> ! Every five cups of coffee and a new theme for Jekyll is ready 😋</p>
-<p>Either way, your support is a way to thank me ❤️</p>
-<p align="center"><b>Thank you for your support!</b></p>
+- **자동 IT 기술동향 포스팅**: 매일 Claude AI가 최신 IT 뉴스를 요약해 자동으로 포스트를 생성·커밋합니다. 최근 7일간 다룬 주제와 겹치지 않도록 중복 방지 로직이 적용되어 있습니다.
+- **카테고리 네비게이션**: `_plugins/category-generator.rb`가 카테고리별 페이지를 자동으로 생성하고, 사이드바에서 게시글 수와 함께 표시됩니다.
+- **자동 목차(TOC)**: `_includes/toc.html`이 게시글의 헤딩을 파싱해 목차를 자동 생성합니다.
+- **미래 날짜 게시글 지원**: `_config.yml`의 `future: true` 설정으로 미래 날짜의 게시글도 즉시 게시됩니다.
+
+---
+
+## 카테고리
+
+| 카테고리 | 설명 |
+|---------|------|
+| Java | Java 기초 & 중급 |
+| Spring | Spring Framework 학습 |
+| TDD | TDD & Clean Code |
+| SQL | SQL 쿼리 & 튜닝 |
+| React | React 프론트엔드 |
+| AI | AI 자동화, Claude Code |
+| News | IT 기술동향 (자동 포스팅) |
+| GitBlog | 블로그 운영 기록 |
+| Tool | 개발 도구 팁 |
+| Conference | 개발 컨퍼런스 후기 |
+
+---
+
+## 로컬 실행
+
+```bash
+# 의존성 설치
+bundle install
+
+# 로컬 서버 실행 (http://localhost:4000)
+bundle exec jekyll serve
+
+# 정적 사이트 빌드
+bundle exec jekyll build
+```
+
+---
+
+## 게시글 작성
+
+게시글은 `_posts/<서브디렉토리>/YYYY-MM-DD-slug.md` 경로에 작성합니다.
+
+```yaml
+---
+layout: post
+title: "제목"
+categories:
+  - Java      # 상위 카테고리
+  - Spring    # 하위 카테고리
+tags: [Spring, 인프런]
+toc: true
+toc_sticky: true
+date: YYYY-MM-DD
+last_modified_at: YYYY-MM-DD
+---
+```
+
+### 새 카테고리 추가 시
+
+1. `_includes/nav_list_main` — 사이드바에 항목 추가
+2. `_pages/category/<Category>.md` — 카테고리 페이지 파일 생성
+
+---
+
+## 라이선스
+
+테마 원작자: [Artem Sheludko](https://github.com/artemsheludko/flexton)
